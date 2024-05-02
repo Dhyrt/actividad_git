@@ -7,24 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nueva_tarea"])) {
     // Nombre del archivo donde se guardarán las tareas
     $fileName = "tasks.txt";
 
-    // Abrir el archivo de tareas en modo de escritura (agregar al final)
-    $archivo = fopen($fileName, "a");
-
-    // Verificar si se pudo abrir el archivo correctamente
-    if (!$archivo) {
-        die("No se pudo abrir el archivo para escritura.");
-    }
-
-    // Escribir la nueva tarea en el archivo
-    $resultado = fwrite($archivo, $nueva_tarea . "\n");
-
-    // Verificar si se pudo escribir en el archivo correctamente
-    if (!$resultado) {
-        die("No se pudo escribir en el archivo.");
-    }
-
-    // Cerrar el archivo
-    fclose($archivo);
+    // Agregar la nueva tarea al archivo con estado "pendiente" (0)
+    $nueva_tarea_linea = "$nueva_tarea|0\n";
+    file_put_contents($fileName, $nueva_tarea_linea, FILE_APPEND | LOCK_EX);
 
     // Redirigir de nuevo a la página principal
     header("Location: index.php");

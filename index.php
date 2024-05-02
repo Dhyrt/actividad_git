@@ -34,20 +34,28 @@
     }
 
     // Cargar las tareas desde el archivo
-    $tasks = loadTasks();
+    // Cargar las tareas desde el archivo
+$tasks = loadTasks();
 
-    if (empty($tasks)) {
-        echo "<p>No hay tareas pendientes.</p>";
-    } else {
-        echo "<ul>";
-        foreach ($tasks as $task) {
-            echo "<li class='pending-task'>";
-            echo "<input type='checkbox' disabled> ";
-            echo $task;
-            echo "</li>";
+if (empty($tasks)) {
+    echo "<p>No hay tareas pendientes.</p>";
+} else {
+    echo "<ul>";
+    foreach ($tasks as $task) {
+        $taskDetails = explode('|', $task);
+        if (count($taskDetails) < 2) {
+            echo "<p>Error en el formato de la tarea: $task</p>";
+            continue;
         }
-        echo "</ul>";
+        list($taskName, $completed) = $taskDetails;
+        echo "<li class='" . ($completed == '1' ? 'completed-task' : 'pending-task') . "'>";
+        echo "<input type='checkbox' " . ($completed == '1' ? 'checked' : '') . " disabled> ";
+        echo $taskName;
+        echo "</li>";
     }
+    echo "</ul>";
+}
+
     ?>
 
     <a href="agregar.php">Agregar nueva tarea</a> | <a href="completar.php">Marcar tarea como completada</a>
