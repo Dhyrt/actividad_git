@@ -23,19 +23,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nueva_tarea"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Nueva Tarea</title>
-    <style>
-        /* Estilos */
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>Agregar Nueva Tarea</h1>
     <div class="container">
-        <form action="agregar.php" method="post">
-            <label for="nueva_tarea">Nueva Tarea:</label>
-            <input type="text" id="nueva_tarea" name="nueva_tarea" required>
-            <button type="submit">Agregar</button>
-        </form>
+    <div class="card">
+            <h1>Agregar Nueva Tarea</h1>
+            <form action="agregar.php" method="post">
+                <label for="nueva_tarea">Nueva Tarea:</label>
+                <input type="text" id="nueva_tarea" name="nueva_tarea" class="input-field">
+                <div class="buttons">
+                    <button type="submit" class="button" id="agregar">Agregar</button>
+                    <form action="index.php" method="GET">
+                    <button type="submit" class="button" id="volver">Volver</button>
+                    </form>
+                </div>
+            </form>
+        </div>
     </div>
-    <a href="index.php">Volver a la lista de tareas</a>
 </body>
 </html>

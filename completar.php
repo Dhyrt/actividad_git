@@ -33,29 +33,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["task_index"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcar Tarea como Completada</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>Marcar Tarea como Completada</h1>
     <div class="container">
-        <form action="completar.php" method="post">
-            <label for="task_index">Seleccione la tarea a marcar como completada:</label>
-            <select id="task_index" name="task_index">
-                <?php
-                // Nombre del archivo donde se guardan las tareas
-                $fileName = "tasks.txt";
+        <div class="card">
+        <h1>Marcar Tarea como Completada</h1>
+            <form action="completar.php" method="post">
+                <label for="task_index">Seleccione la tarea a marcar como completada:</label>
+                <select id="task_index" name="task_index">
+                    <?php
+                    // Nombre del archivo donde se guardan las tareas
+                    $fileName = "tasks.txt";
 
-                // Cargar las tareas desde el archivo
-                $tasks = file($fileName, FILE_IGNORE_NEW_LINES);
+                    // Cargar las tareas desde el archivo
+                    $tasks = file($fileName, FILE_IGNORE_NEW_LINES);
 
-                // Mostrar las tareas como opciones en el select
-                foreach ($tasks as $index => $task) {
-                    echo "<option value='$index'>$task</option>";
-                }
-                ?>
-            </select>
-            <button type="submit">Marcar como Completada</button>
-        </form>
+                    // Mostrar las tareas como opciones en el select
+                    foreach ($tasks as $index => $task) {
+                        echo "<option value='$index'>$task</option>";
+                    }
+                    ?>
+                </select>
+                <div class="buttons">
+                    <button type="submit" class="button" id="modificar">Marcar como Completada</button>
+                    <form action="index.php" method="GET">
+                        <button type="submit" class="button" id="volver">Volver</button>
+                    </form>
+                </div>
+            </form>
+        </div>
     </div>
-    <a href="index.php">Volver a la lista de tareas</a>
 </body>
 </html>

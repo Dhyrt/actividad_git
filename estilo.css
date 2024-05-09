@@ -40,6 +40,8 @@ input[type="checkbox"] {
 
 .buttons {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .buttons button {
@@ -61,24 +63,13 @@ input[type="checkbox"] {
     border: none;
 }
 
-/* Estilo base */
-input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    margin-right: 10px;
-    cursor: pointer;
+#volver {
+    background-color: #FF0000; /* Rojo */
+    color: white;
+    border: none;
 }
 
-
 input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     width: 20px;
     height: 20px;
     background-color: #fff;
@@ -99,4 +90,30 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+select {
+    /* Cambiar el color de fondo */
+    background-color: #f9f9f9;
+    
+    /* Cambiar el color del texto */
+    color: #333;
+
+    /* Cambiar el tamaño de la fuente */
+    font-size: 16px;
+
+    /* Cambiar el borde */
+    border: 1px solid #ccc;
+
+    /* Añadir espacio alrededor del contenido */
+    padding: 8px;
+
+    /* Añadir margen alrededor del elemento */
+    margin: 5px 0;
+
+    /* Establecer el cursor */
+    cursor: pointer;
+
+    /* Cambiar el radio de las esquinas */
+    border-radius: 5px;
 }
