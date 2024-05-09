@@ -1,0 +1,102 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f7f3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 400px;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#agregar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#modificar {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+}
+
+/* Estilo base */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    margin: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+label {
+    font-size: 16px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
